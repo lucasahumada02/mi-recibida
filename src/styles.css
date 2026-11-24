@@ -1,0 +1,270 @@
+:root {
+  --bg-paper: #f5efe4;
+  --bg-card: #ffffff;
+  --accent-pink: #ff2e93;
+  --accent-red: #e11d48;
+  --ink: #18181b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #1c1917;
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Contenedor tipo invitación móvil centrada en escritorio */
+.scrapbook-page {
+  max-width: 440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: var(--bg-paper);
+  background-image: radial-gradient(rgba(24, 24, 27, 0.06) 1px, transparent 0);
+  background-size: 16px 16px;
+  padding: 24px 18px 48px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Pantalla inicial TOCÁ PARA ENTRAR */
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  background-color: #f3efe6;
+  background-image: url('/imgs/splash/descarga.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #18181b;
+  text-align: center;
+}
+
+.splash-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 999px;
+  border: 2px solid #18181b;
+  background: #ffffff;
+  color: #18181b;
+  font-family: 'Caveat', 'Space Grotesk', sans-serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 700;
+  transform: rotate(-3deg);
+  box-shadow: 2px 2px 0 #18181b;
+}
+
+.splash-title {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(2.1rem, 6.2vw, 2.85rem);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: #18181b !important;
+  text-shadow:
+    3px 3px 0 rgba(24, 24, 27, 0.32),
+    -1px -1px 0 rgba(255, 255, 255, 0.85) !important;
+}
+
+.splash-btn {
+  margin-top: 4px;
+  border: 2.5px solid #18181b;
+  background: #fde047;
+  color: #18181b;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.05em;
+  padding: 12px 26px;
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 #18181b;
+  cursor: pointer;
+}
+
+.splash-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #18181b;
+}
+
+/* Portada */
+.hero {
+  text-align: center;
+  padding: 18px 10px 24px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(2.6rem, 11vw, 3.6rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--accent-red);
+  text-shadow: 3px 3px 0 #fff, 5px 5px 0 rgba(24, 24, 27, 0.25);
+}
+
+/* Secciones y tarjetas */
+.section {
+  margin-top: 26px;
+}
+
+.section h2 {
+  margin: 0 0 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  color: var(--ink);
+}
+
+.agenda-card,
+.form-box {
+  background: var(--bg-card);
+  border: 2.5px solid var(--accent-red);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 5px 5px 0 rgba(225, 29, 72, 0.22);
+}
+
+.form-box {
+  border-color: var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  background: #fffdf9;
+}
+
+.form-box textarea {
+  min-height: 76px;
+  resize: vertical;
+}
+
+.form-box button[type='submit'],
+.agenda-link {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 11px 16px;
+  background: var(--accent-pink);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 3px 3px 0 var(--ink);
+  cursor: pointer;
+}
+
+.toggle-row,
+.counter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-row button {
+  flex: 1;
+  padding: 9px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  background: #f4f4f5;
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.toggle-row button.active {
+  background: #18181b;
+  color: #fff;
+}
+
+.counter-row button {
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: #fde047;
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.status-msg {
+  margin: 0;
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent-red);
+}
+
+/* Carrusel de cámaras */
+.camera-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 6px 2px 14px;
+}
+
+.camera-card {
+  position: relative;
+  flex: 0 0 280px;
+  height: 210px;
+  scroll-snap-align: center;
+  background: #e7e5e4;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.camera-photo {
+  position: relative;
+  z-index: 1;
+  width: 60%;
+  height: 56%;
+  object-fit: cover;
+  margin: 36px 0 0 24px;
+}
+
+.camera-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.footer {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.footer button {
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 8px 16px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+}
